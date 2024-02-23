@@ -68,7 +68,7 @@ HISTFILE=$HOME/.cache/zshist && SAVEHIST=1000 && HISTSIZE=$SAVEHIST
 setopt inc_append_history hist_ignore_all_dups hist_reduce_blanks autocd globdots
 zstyle ":completion:*" ignored-patterns "init"
 zstyle ":completion:*" menu select 
-autoload -Uz colors compinit edit-command-line && { compinit -u -d ~/.cache/.zcompdump; colors; } # sh
+autoload -Uz colors compinit && { compinit -u -d ~/.cache/.zcompdump; colors; } # sh
 zmodload zsh/complist # c
 ##############################
 
@@ -87,7 +87,6 @@ bindkey -M menuselect "l" vi-forward-char
 bindkey "^[[Z"    pd && zle -N pd
 bindkey "^K"      history-substring-search-up
 bindkey "^J"      history-substring-search-down
-bindkey "^E"      edit-command-line && zle -N edit-command-line
 for pattern in jk jK Jk JK
 do; bindkey -M viins "$pattern" vi-cmd-mode; done
 ##############################

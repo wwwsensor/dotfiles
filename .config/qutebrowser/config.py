@@ -1438,7 +1438,7 @@ c.fonts.tooltip = "default_size default_family"
 ## Whether the underlying Chromium should handle media keys. On Linux,
 ## disabling this also disables Chromium's MPRIS integration.
 ## Type: Bool
-# c.input.media_keys = True
+c.input.media_keys = False
 
 ## Mode to change to when focusing on a tab/URL changes.
 ## Type: String
