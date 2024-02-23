@@ -12,7 +12,7 @@ a zshrc="$EDITOR $ZDOTDIR/.zshrc"
 a cs="cht.sh"
 a trn="trans"
 a man="man "
-a p="pfetch"
+a p="pass"
 # Git
 a g="git"
 a lg="lazygit"
