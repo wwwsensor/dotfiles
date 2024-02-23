@@ -1,0 +1,29 @@
+#!/bin/sh
+# WWW          : https://github.com/wwwsensor/dotfiles
+# Author       : @sensor @ss
+# Dependencies : grep
+#
+# Script to not rely in ttys to fix something and
+# therefore improve performance starting only one
+# tty at boot.
+#
+# $dif must be present in $two.
+
+# Handle errors
+senderr(){ echo switcHypr: "$@";exit 1; }
+
+# Files
+one=~/.config/hypr/hyprland.conf
+tmp=~/.local/bin/resources/hyprland.conf
+two=~/.local/bin/resources/hyprland2.conf
+
+# Difference
+dif=MNBVCXZ
+
+# Error if $two or $one not found
+test -e $two || senderr Conf 2 not found
+test -e $one || senderr Conf 1 not found
+
+# Main
+grep "$dif" $one >/dev/null && cp -f $tmp $one && exit
+cp -f $one $tmp && cp -f $two $one

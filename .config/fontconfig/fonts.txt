@@ -1,0 +1,22 @@
+# Mono
+- Hack
+  - paru ttf-hack-nerd | HackNerdFont
+  - choco nerdfont-hack | <idk>
+- Comic Shanns
+  - paru otf-comicshanns-nerd | ComicShannsMonoNerdFont
+  - choco nerd-fonts-ComicShannsMono | ComicShannsMono Nerd Font
+
+# Normal
+- Cantarell (common)
+- Circular Std (paid)
+- Manrope
+  - curl https://www.gent.media/assets/manrope/manrope.zip -O
+
+# Both
+- San Francisco
+  - Pro
+    - git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts.git
+    - NO
+  - Mono
+    - paru nerd-fonts-sf-mono | SFMonoNerdFontMono
+    - NO

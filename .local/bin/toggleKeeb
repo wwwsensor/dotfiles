@@ -1,0 +1,16 @@
+#!/bin/sh
+# WWW          : https://github.com/wwwsensor/dotfiles
+# Author       : @sensor @ss
+#
+# Toggle a Hyprland detected keyboard by arguments.
+# List attached devices: `hyprctl devices`.
+
+# Command to enable/disable
+command="hyprctl keyword device:$@:enabled"
+
+# Enabled: Prints string
+# Disabled: Prints emtpy string
+status=$(hyprctl getoption device:$@:enabled | grep "int: 1")
+
+# If string is empty (keeb disabled), enable keeb. If not, disable keeb.
+[ -z "$status" ] && $command 1 || $command 0

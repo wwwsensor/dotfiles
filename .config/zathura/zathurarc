@@ -1,0 +1,21 @@
+# OPTIONS ####################
+## Hide statusbar
+set guioptions no
+
+## Auto copy selection to sys clipboard
+set selection-clipboard clipboard
+
+## Page spread in two pages mode
+set first-page-column 1:1 # Couples
+#set first-page-column 1:2 # By numbers
+##############################
+
+# BINDS ######################
+map ZQ quit
+map <C-c> quit
+map i recolor
+map b toggle_statusbar
+map p toggle_page_mode # Single or two pages
+map P print
+map f toggle_fullscreen
+##############################
