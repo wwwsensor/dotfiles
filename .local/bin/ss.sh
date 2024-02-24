@@ -28,7 +28,7 @@ done
 
 # SW install
 echo Installing packages...
-shell="zsh zsh-syntax-highlighting zsh-history-substring-search github-cli lsd man git ddgr pfetch-rs-bin git-credential-oauth cmake cht.sh luarocks yt-dlp npm yazi ueberzugpp"
+shell="zsh zsh-syntax-highlighting zsh-history-substring-search github-cli lsd man tealdeer git ddgr pfetch-rs-bin git-credential-oauth cmake cht.sh luarocks yt-dlp npm yazi ueberzugpp"
 gui="pipewire-pulse pipewire-media-session swaybg tofi waylock playerctl pamixer qutebrowser grim slurp"
 files="bat imagemagick jq ffmpegthumbnailer unar mpv neovim zathura-pdf-poppler swayimg gnome-keyring"
 sys="artix-archlinux-support mimi xdg-desktop-portal-wlr python-adblock wl-clipboard noto-fonts-emoji"
