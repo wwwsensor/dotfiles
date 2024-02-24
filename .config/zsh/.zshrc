@@ -12,6 +12,7 @@ a zshrc="$EDITOR $ZDOTDIR/.zshrc"
 a cs="cht.sh"
 a trn="trans"
 a man="man "
+a m="tldr "
 a p="pass"
 # Git
 a g="git"
