@@ -79,6 +79,7 @@ PS1="%U%3~%u "; RPS1="%(?..%F{red}%?%f)"
 ## BINDS #####################
 # Enable vi mode
 bindkey -v
+bindkey -v "^?" backward-delete-char
 bindkey -M menuselect "h" vi-backward-char
 bindkey -M menuselect "j" vi-down-line-or-history
 bindkey -M menuselect "k" vi-up-line-or-history
