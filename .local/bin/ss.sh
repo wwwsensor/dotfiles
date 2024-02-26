@@ -33,7 +33,7 @@ gui="pipewire-pulse pipewire-media-session swaybg tofi waylock playerctl pamixer
 files="bat imagemagick jq ffmpegthumbnailer unar mpv neovim zathura-pdf-poppler swayimg gnome-keyring"
 sys="artix-archlinux-support mimi xdg-desktop-portal-wlr python-adblock wl-clipboard noto-fonts-emoji"
 apps="discord vencord-installer-cli-bin alacritty"
-paru --useask --noconfirm --needed -Sy $shell $gui $files $sys $apps >$n 2>&1
+paru --noconfirm --needed -Sy $shell $gui $files $sys $apps >$n 2>&1
 
 # Final message
 echo
