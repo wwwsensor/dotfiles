@@ -100,6 +100,7 @@ bindkey -M menuselect "j" vi-down-line-or-history
 bindkey -M menuselect "k" vi-up-line-or-history
 bindkey -M menuselect "l" vi-forward-char
 # Viins
+bindkey -v "^?" backward-delete-char # strange bug
 bindkey "^[[Z" pd && zle -N pd
 bindkey "^K"   history-substring-search-up
 bindkey "^J"   history-substring-search-down
