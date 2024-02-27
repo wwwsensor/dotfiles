@@ -78,19 +78,37 @@ PS1="%U%3~%u "; RPS1="%(?..%F{red}%?%f)"
 ##############################
 
 ## BINDS #####################
+# Readline modes:
+#   vicmd = normal
+#   viins = insert
+#   visual = visual
+#   menuselect
+#   main
+#   etc...
+#
+# See current binds of a mode:
+# $ bindkey -M <mode>
+#
+# Viins is the default mode
+# while vi mode is enabled.
+
 # Enable vi mode
 bindkey -v
-bindkey -v "^?" backward-delete-char
+# Menuselect
 bindkey -M menuselect "h" vi-backward-char
 bindkey -M menuselect "j" vi-down-line-or-history
 bindkey -M menuselect "k" vi-up-line-or-history
 bindkey -M menuselect "l" vi-forward-char
-# Insert mode
-bindkey "^[[Z"    pd && zle -N pd
-bindkey "^K"      history-substring-search-up
-bindkey "^J"      history-substring-search-down
+# Viins
+bindkey "^[[Z" pd && zle -N pd
+bindkey "^K"   history-substring-search-up
+bindkey "^J"   history-substring-search-down
 for pattern in jk jK Jk JK
-do; bindkey -M viins "$pattern" vi-cmd-mode; done
+do; bindkey "$pattern" vi-cmd-mode; done
+# Vicmd
+bindkey -M vicmd "^[[Z" pd && zle -N pd
+bindkey -M vicmd "^K"   history-substring-search-up
+bindkey -M vicmd "^J"   history-substring-search-down
 ##############################
 
 ## VI MODE ###################
