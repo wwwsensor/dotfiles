@@ -107,6 +107,8 @@ bindkey "^J"   history-substring-search-down
 for pattern in jk jK Jk JK
 do; bindkey "$pattern" vi-cmd-mode; done
 # Vicmd
+bindkey -M vicmd "L" end-of-line
+bindkey -M vicmd "H" beginning-of-line
 bindkey -M vicmd "^[[Z" pd && zle -N pd
 bindkey -M vicmd "^K"   history-substring-search-up
 bindkey -M vicmd "^J"   history-substring-search-down
