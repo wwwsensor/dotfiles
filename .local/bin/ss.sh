@@ -25,6 +25,9 @@ for repo in bg nvim
 do
   git clone https://github.com/wwwsensor/$repo ~/.config/$repo >$n 2>&1 || echo \~/.config/$repo already exists
 done
+## pm
+git clone https://github.com/wwwsensor/pm ~/.local/bin/passm
+ln -s ~/.local/bin/passm/pm ~/.local/bin/pm
 
 # SW install
 echo Installing packages...
