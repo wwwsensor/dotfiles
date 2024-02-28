@@ -31,12 +31,15 @@ ln -s ~/.local/bin/passm/pm ~/.local/bin/pm
 
 # SW install
 echo Installing packages...
-shell="zsh zsh-syntax-highlighting zsh-history-substring-search lsd man tealdeer git ddgr pfetch-rs-bin git-credential-oauth cmake cht.sh luarocks yt-dlp npm yazi ueberzugpp"
-gui="pipewire-pulse pipewire-media-session swaybg tofi waylock playerctl pamixer qutebrowser grim slurp"
-files="bat imagemagick jq ffmpegthumbnailer unar mpv neovim zathura-pdf-poppler swayimg gnome-keyring"
-sys="artix-archlinux-support mimi xdg-desktop-portal-wlr python-adblock wl-clipboard noto-fonts-emoji"
-apps="discord vencord-installer-cli-bin alacritty"
-paru --noconfirm --needed -Sy $shell $gui $files $sys $apps >$n 2>&1
+sw="
+zsh zsh-syntax-highlighting zsh-history-substring-search lsd man tealdeer git ddgr pfetch-rs-bin
+git-credential-oauth cmake cht.sh luarocks yt-dlp npm yazi ueberzugpp pipewire-pulse wireplumber
+swaybg tofi waylock playerctl pamixer qutebrowser grim slurp xwaylandvideobridge bat imagemagick
+jq ffmpegthumbnailer unar mpv neovim zathura-pdf-poppler swayimg gnome-keyring noto-fonts-emoji
+artix-archlinux-support mimi xdg-desktop-portal-hyprland python-adblock wl-clipboard discord
+vencord-installer-cli-bin alacritty
+"
+paru --noconfirm --needed -Sy $sw >$n 2>&1
 
 # Final message
 echo
