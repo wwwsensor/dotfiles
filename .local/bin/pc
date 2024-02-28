@@ -5,15 +5,15 @@
 #
 # Get pixel's color info in Wayland server.
 
-n=/dev/null
+N=/dev/null
 
 # Handle errors
 senderr(){ echo pc: "$@";exit 1; }
 
 # Handle dependencies
-which grim >$n || senderr grim not found
-which slurp >$n || senderr slurp not found
-which convert >$n || senderr imagemagick not found
+which grim >$N || senderr grim not found
+which slurp >$N || senderr slurp not found
+which convert >$N || senderr imagemagick not found
 
 # Main
-{ grim -g "$(slurp -p)" -t ppm - | convert - -format "%[pixel:p{0,0}]" txt:-; } 2>$n
+{ grim -g "$(slurp -p)" -t ppm - | convert - -format "%[pixel:p{0,0}]" txt:-; } 2>$N

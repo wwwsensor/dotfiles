@@ -5,41 +5,41 @@
 #
 # Setup my environment.
 
-n=/dev/null
+N=/dev/null
 
 # Handle errors
 senderr(){ echo ss.sh: "$@";exit 1; }
 
 # Handle dependencies
-for sw in paru git
+for SW in paru git
 do
-  which $sw >$n 2>&1 || senderr $sw not found
+  which $SW >$N 2>&1 || senderr $SW not found
 done
 
 # Select proper elevation method
-which doas >$n && alias s=sudo || alias s=doas
+which doas >$N && alias s=sudo || alias s=doas
 
 # Repo cloning
 echo Cloning repos...
+{
+git clone https://github.com/wwwsensor/pm ~/.local/bin/passm && ln -s ~/.local/bin/passm/pm ~/.local/bin/pm
 for repo in bg nvim
 do
-  git clone https://github.com/wwwsensor/$repo ~/.config/$repo >$n 2>&1 || echo \~/.config/$repo already exists
+  git clone https://github.com/wwwsensor/$repo ~/.config/$repo || echo \~/.config/$repo already exists
 done
-## pm
-git clone https://github.com/wwwsensor/pm ~/.local/bin/passm
-ln -s ~/.local/bin/passm/pm ~/.local/bin/pm
+} >$N 2>&1
 
 # SW install
 echo Installing packages...
-sw="
+SW="
 zsh zsh-syntax-highlighting zsh-history-substring-search lsd man tealdeer git ddgr pfetch-rs-bin
 git-credential-oauth cmake cht.sh luarocks yt-dlp npm yazi ueberzugpp pipewire-pulse wireplumber
 swaybg tofi waylock playerctl pamixer qutebrowser grim slurp xwaylandvideobridge bat imagemagick
 jq ffmpegthumbnailer unar mpv neovim zathura-pdf-poppler swayimg gnome-keyring noto-fonts-emoji
-artix-archlinux-support mimi xdg-desktop-portal-hyprland python-adblock wl-clipboard discord
-vencord-installer-cli-bin alacritty
+artix-archlinux-support mimi xdg-desktop-portal-hyprland xdg-desktop-portal-gtk python-adblock
+vencord-installer-cli-bin alacritty wl-clipboard discord
 "
-paru --noconfirm --needed -Sy $sw >$n 2>&1
+paru --noconfirm --needed -Sy $SW >$N 2>&1
 
 # Final message
 echo

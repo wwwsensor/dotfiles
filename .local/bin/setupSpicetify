@@ -5,31 +5,31 @@
 #
 # Auto setup Spicetify.
 
-n=/dev/null
+N=/dev/null
 
 # Handle errors
 senderr(){ echo setupSpicetify: "$@";exit 1; }
 
 # Handle dependencies
-which paru >$n || senderr paru not found
+which paru >$N || senderr paru not found
 
 # Select proper elevation method
-which doas >$n && alias s=sudo || alias s=doas
+which doas >$N && alias s=sudo || alias s=doas
 
 # SW install
 echo Installing Spotify...
-paru --noconfirm -Sy spotify >$n 2>&1 || p spotify-snapstore >$n 2>&1
+paru --noconfirm -Sy spotify >$N 2>&1 || p spotify-snapstore >$N 2>&1
 echo Installing Spicetify...
-paru --noconfirm --needed -Sy spicetify-cli spicetify-marketplace-bin >$n 2>&1 &&
+paru --noconfirm --needed -Sy spicetify-cli spicetify-marketplace-bin >$N 2>&1 &&
 
 # Preparation
 mkdir -p ~/.config/spotify && touch ~/.config/spotify/prefs &&
 
 # Rights
 echo Getting write rights of /opt/spotify ...
-s chgrp wheel -R /opt/spotify >$n 2>&1 && s chown $USER -R /opt/spotify >$n 2>&1 &&
+s chgrp wheel -R /opt/spotify >$N 2>&1 && s chown $USER -R /opt/spotify >$N 2>&1 &&
 
 # Injection
 echo Injecting Spicetify...
-{ spicetify config custom_apps marketplace && spicetify backup apply; } >$n 2>&1
+{ spicetify config custom_apps marketplace && spicetify backup apply; } >$N 2>&1
 echo Finished!
