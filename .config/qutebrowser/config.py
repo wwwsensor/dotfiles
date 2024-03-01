@@ -1047,7 +1047,7 @@ c.input.media_keys = False
 ## Time (in milliseconds) from pressing a key to seeing the keyhint
 ## dialog.
 ## Type: Int
-c.keyhint.delay = 100
+c.keyhint.delay = 400
 
 ## Rounding radius (in pixels) for the edges of the keyhint dialog.
 ## Type: Int
