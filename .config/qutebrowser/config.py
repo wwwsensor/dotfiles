@@ -432,10 +432,6 @@ c.content.autoplay = False
 ## Type: Bool
 # c.content.javascript.can_close_tabs = False
 
-## Allow JavaScript to open new tabs without user interaction.
-## Type: Bool
-# c.content.javascript.can_open_tabs_automatically = False
-
 ## Allow JavaScript to read from or write to the clipboard. With
 ## QtWebEngine, writing the clipboard as response to a user interaction
 ## is always allowed.
@@ -444,7 +440,7 @@ c.content.autoplay = False
 ##   - none: Disable access to clipboard.
 ##   - access: Allow reading from and writing to the clipboard.
 ##   - access-paste: Allow accessing the clipboard and pasting clipboard content.
-# c.content.javascript.clipboard = 'none'
+c.content.javascript.clipboard = 'access'
 
 ## Enable JavaScript.
 ## Type: Bool
@@ -708,7 +704,7 @@ c.content.notifications.enabled = False
 ## Directory to save downloads to. If unset, a sensible OS-specific
 ## default is used.
 ## Type: Directory
-c.downloads.location.directory = ~/dow
+c.downloads.location.directory = '~/dow'
 
 ## Prompt the user for the download location. If set to false,
 ## `downloads.location.directory` will be used.
