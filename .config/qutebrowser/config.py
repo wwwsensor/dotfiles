@@ -1047,7 +1047,7 @@ c.input.media_keys = False
 ## Time (in milliseconds) from pressing a key to seeing the keyhint
 ## dialog.
 ## Type: Int
-c.keyhint.delay = 0
+c.keyhint.delay = 100
 
 ## Rounding radius (in pixels) for the edges of the keyhint dialog.
 ## Type: Int
@@ -1524,7 +1524,7 @@ c.tabs.show = 'multiple'
 ## Duration (in milliseconds) to show the tab bar before hiding it when
 ## tabs.show is set to 'switching'.
 ## Type: Int
-# c.tabs.show_switching_delay = 800
+c.tabs.show_switching_delay = 650
 
 ## Open a new window for every tab.
 ## Type: Bool
