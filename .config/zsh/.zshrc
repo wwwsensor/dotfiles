@@ -132,4 +132,4 @@ for p in zsh-history-substring-search zsh-syntax-highlighting
 do; . /usr/share/zsh/plugins/$p/$p.zsh 2>/dev/null; done
 ##############################
 
-cal
+cal -m
