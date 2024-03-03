@@ -1,21 +1,20 @@
-# OPTIONS ####################
-## Hide statusbar
+# recoloring
+set recolor
+set recolor-keephue
+# ui
 set guioptions no
-
-## Auto copy selection to sys clipboard
+set font Cantarell
+include catppuccin-mocha
+# auto copy selection to sys clipboard
 set selection-clipboard clipboard
+# page spread in two pages mode
+set first-page-column 1:1 # by couples or numbers (1:2)
 
-## Page spread in two pages mode
-set first-page-column 1:1 # Couples
-#set first-page-column 1:2 # By numbers
-##############################
+#################### set > options | [un]map > binds ####################
 
-# BINDS ######################
 map ZQ quit
-map <C-c> quit
+map ZZ save
+map <C-s> nohl
 map i recolor
 map b toggle_statusbar
-map p toggle_page_mode # Single or two pages
-map P print
-map f toggle_fullscreen
-##############################
+map p toggle_page_mode # pages per "page"

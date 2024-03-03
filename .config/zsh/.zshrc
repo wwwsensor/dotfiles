@@ -14,7 +14,6 @@ a cs="cht.sh"
 a trn="trans"
 a man="man "
 a m="tldr "
-a p="pmcp"
 # Git
 a g="git"
 a lg="lazygit"
@@ -130,7 +129,6 @@ precmd(){ echo -ne "\e[5 q"; }
 ##############################
 
 ## PLUGINS ###################
-. $ZDOTDIR/pmcp
 for p in zsh-history-substring-search zsh-syntax-highlighting
 do; . /usr/share/zsh/plugins/$p/$p.zsh 2>/dev/null; done
 ##############################
