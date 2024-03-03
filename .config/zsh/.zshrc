@@ -4,7 +4,7 @@
 ## ALIASES & OTHER ############
 alias a=alias
 # Suffix
-for s in gitconfig gitignore txt conf yml toml log json ini zsh lua py md
+for s in gitconfig gitignore txt conf yml toml log json ini zsh lua py md mod
 do; a -s $s=$EDITOR; done
 # Other
 a ddgr="ddgr --noua --rev --url-handler=xdg-open"
