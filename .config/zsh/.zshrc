@@ -1,7 +1,7 @@
 # WWW    : https://github.com/wwwsensor/dotfiles
 # Author : @sensor @ss
 
-## ALIASES ###################
+## ALIASES & OTHER ############
 alias a=alias
 # Suffix
 for s in gitconfig gitignore txt conf yml toml log json ini zsh lua py md
@@ -14,6 +14,7 @@ a cs="cht.sh"
 a trn="trans"
 a man="man "
 a m="tldr "
+a p="pmcp"
 # Git
 a g="git"
 a lg="lazygit"
@@ -44,6 +45,7 @@ a e="$EDITOR"
 a i="swayimg"
 a c="bat"
 unalias a
+N=/dev/null
 ##############################
 
 ## FUNCTIONS #################
@@ -128,6 +130,7 @@ precmd(){ echo -ne "\e[5 q"; }
 ##############################
 
 ## PLUGINS ###################
+. $ZDOTDIR/pmcp
 for p in zsh-history-substring-search zsh-syntax-highlighting
 do; . /usr/share/zsh/plugins/$p/$p.zsh 2>/dev/null; done
 ##############################
