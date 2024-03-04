@@ -9,7 +9,6 @@ do; a -s $s=$EDITOR; done
 # Other
 a ddgr="ddgr --noua --rev --url-handler=xdg-open"
 a zshrc="$EDITOR $ZDOTDIR/.zshrc"
-a pmc="portablemc"
 a cs="cht.sh"
 a trn="trans"
 a man="man "
