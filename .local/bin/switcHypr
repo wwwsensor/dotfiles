@@ -21,8 +21,8 @@ two=~/.local/bin/resources/hyprland2.conf
 dif=MNBVCXZ
 
 # Error if $two or $one not found
-test -e $two || senderr Conf 2 not found
-test -e $one || senderr Conf 1 not found
+[ -e $two ] || senderr Conf 2 not found
+[ -e $one ] || senderr Conf 1 not found
 
 # Main
 grep "$dif" $one >/dev/null && cp -f $tmp $one && exit
