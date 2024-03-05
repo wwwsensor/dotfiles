@@ -1,11 +1,18 @@
+# WWW    : https://github.com/wwwsensor/dotfiles
+# Author : @sensor @ss
+# Wiki   : https://pwmt.org/projects/zathura/documentation
+
 # recoloring
 set recolor
 set recolor-keephue
+
 # ui
-set guioptions no
 set font Inter
+set guioptions no
+
 # auto copy selection to sys clipboard
 set selection-clipboard clipboard
+
 # page spread in two pages mode
 set first-page-column 1:1 # by couples or numbers (1:2)
 
