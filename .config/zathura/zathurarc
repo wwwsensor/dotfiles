@@ -9,6 +9,7 @@ set recolor-keephue
 # ui
 set font Inter
 set guioptions no
+include tokyonight-night
 
 # auto copy selection to sys clipboard
 set selection-clipboard clipboard
