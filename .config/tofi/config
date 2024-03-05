@@ -4,7 +4,7 @@ hint-font = true
 
 ## TEXT ######################
 # Default
-text-color = #CDD6F4
+text-color = #98d1ce
 
 # Common theming attributes for every part:
 #
@@ -18,7 +18,7 @@ text-color = #CDD6F4
 # *-background-corner-radius
 #     Radius of bg box corners in pixels
 
-prompt-color = #CDD6F4
+prompt-color = #98d1ce
 prompt-background = #00000000
 prompt-background-padding = 0
 prompt-background-corner-radius = 0
@@ -28,7 +28,7 @@ placeholder-background = #00000000
 placeholder-background-padding = 0
 placeholder-background-corner-radius = 0
 
-input-color = #CDD6F4
+input-color = #98d1ce
 input-background = #00000000
 input-background-padding = 0
 input-background-corner-radius = 0
@@ -45,7 +45,7 @@ default-result-background-corner-radius = 0
 # alternate-result-background-padding = 0
 # alternate-result-background-corner-radius = 0
 
-selection-color = #a6e3a1
+selection-color = #d26939
 selection-background = #00000000
 selection-background-padding = 0
 selection-background-corner-radius = 0
@@ -56,7 +56,7 @@ selection-match-color = #00000000
 
 
 ## CURSOR ####################
-text-cursor-color = #F5E0DC
+text-cursor-color = #98d1ce
 # text-cursor-background = #000000
 text-cursor-thickness = 1
 
@@ -83,7 +83,7 @@ min-input-width = 100
 width = 1600
 height = 65
 
-background-color = #1E1E2E
+background-color = #0a0f14
 
 corner-radius = 0
 
@@ -96,7 +96,7 @@ outline-width = 0
 outline-color = #080800
 
 border-width = 2
-border-color = #a6e3a1
+border-color = #98d1ce
 
 # Whether to clip text drawing to be within the specified padding. This
 # is mostly important for allowing text to be inset from the border,
