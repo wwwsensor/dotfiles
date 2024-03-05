@@ -8,12 +8,6 @@ config.bind("E", 'config-edit')
 config.bind('K', 'tab-next')
 config.bind('J', 'tab-prev')
 
-# Catppuccin colorscheme
-## Import
-import catppuccin
-## Config (variant and oddiness of completion rows)
-catppuccin.setup(c, "mocha", True)
-
 # Avoid GUI to write file
 config.load_autoconfig(False)
 ##############################

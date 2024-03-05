@@ -4,7 +4,6 @@ set recolor-keephue
 # ui
 set guioptions no
 set font Inter
-include catppuccin-mocha
 # auto copy selection to sys clipboard
 set selection-clipboard clipboard
 # page spread in two pages mode
