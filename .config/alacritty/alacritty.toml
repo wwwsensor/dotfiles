@@ -1,7 +1,3 @@
-#[shell]
-#  program = "powershell"
-#  args = ["-nologo"]
-
 [window]
   opacity = 0.94
   padding.x = 20
@@ -10,66 +6,39 @@
 [font]
   normal.family = "HackNerdFont"
 
-# Catppuccin
-[colors.primary]
-background = "#1E1E2E"
-foreground = "#CDD6F4"
-dim_foreground = "#CDD6F4"
-bright_foreground = "#CDD6F4"
-[colors.cursor]
-text = "#1E1E2E"
-cursor = "#F5E0DC"
-[colors.vi_mode_cursor]
-text = "#1E1E2E"
-cursor = "#B4BEFE"
-[colors.search.matches]
-foreground = "#1E1E2E"
-background = "#A6ADC8"
-[colors.search.focused_match]
-foreground = "#1E1E2E"
-background = "#A6E3A1"
-[colors.footer_bar]
-foreground = "#1E1E2E"
-background = "#A6ADC8"
-[colors.hints.start]
-foreground = "#1E1E2E"
-background = "#F9E2AF"
-[colors.hints.end]
-foreground = "#1E1E2E"
-background = "#A6ADC8"
-[colors.selection]
-text = "#1E1E2E"
-background = "#F5E0DC"
-[colors.normal]
-black = "#45475A"
-red = "#F38BA8"
-green = "#A6E3A1"
-yellow = "#F9E2AF"
-blue = "#89B4FA"
-magenta = "#F5C2E7"
-cyan = "#94E2D5"
-white = "#BAC2DE"
+#[shell]
+#  program = "powershell"
+#  args = ["-nologo"]
+
+# Moonfly : https://github.com/bluz71/vim-moonfly-colors
+
+[colors]
+draw_bold_text_with_bright_colors = true
 [colors.bright]
-black = "#585B70"
-red = "#F38BA8"
-green = "#A6E3A1"
-yellow = "#F9E2AF"
-blue = "#89B4FA"
-magenta = "#F5C2E7"
-cyan = "#94E2D5"
-white = "#A6ADC8"
-[colors.dim]
-black = "#45475A"
-red = "#F38BA8"
-green = "#A6E3A1"
-yellow = "#F9E2AF"
-blue = "#89B4FA"
-magenta = "#F5C2E7"
-cyan = "#94E2D5"
-white = "#BAC2DE"
-[[colors.indexed_colors]]
-index = 16
-color = "#FAB387"
-[[colors.indexed_colors]]
-index = 17
-color = "#F5E0DC"
+black = "#949494"
+blue = "#74b2ff"
+cyan = "#85dc85"
+green = "#36c692"
+magenta = "#ae81ff"
+red = "#ff5189"
+white = "#e4e4e4"
+yellow = "#c2c292"
+[colors.cursor]
+cursor = "#8e8e8e"
+text = "#080808"
+[colors.normal]
+black = "#323437"
+blue = "#80a0ff"
+cyan = "#79dac8"
+green = "#8cc85f"
+magenta = "#cf87e8"
+red = "#ff5454"
+white = "#c6c6c6"
+yellow = "#e3c78a"
+[colors.primary]
+background = "#080808"
+bright_foreground = "#eeeeee"
+foreground = "#bdbdbd"
+[colors.selection]
+background = "#b2ceee"
+text = "#080808"
