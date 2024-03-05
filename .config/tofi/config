@@ -1,4 +1,4 @@
-font = "/usr/share/fonts/manrope/Manrope-Medium.otf"
+font = "Inter"
 font-size = 13
 hint-font = true
 

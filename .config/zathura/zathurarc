@@ -3,7 +3,7 @@ set recolor
 set recolor-keephue
 # ui
 set guioptions no
-set font Cantarell
+set font Inter
 include catppuccin-mocha
 # auto copy selection to sys clipboard
 set selection-clipboard clipboard
