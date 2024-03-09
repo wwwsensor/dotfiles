@@ -1,4 +1,4 @@
-font = "/home/ss/.local/share/fonts/Inter.ttc"
+font = "~/.local/share/fonts/Inter.ttc"
 font-size = 13
 hint-font = true
 
@@ -72,7 +72,7 @@ num-results = 0
 
 ### WINDOW ###################
 width = 1200
-height = 68
+height = 64
 
 background-color = #1a1b26
 
