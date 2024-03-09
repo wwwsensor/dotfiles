@@ -703,7 +703,7 @@ c.downloads.location.directory = '~/dow'
 ## Prompt the user for the download location. If set to false,
 ## `downloads.location.directory` will be used.
 ## Type: Bool
-# c.downloads.location.prompt = True
+c.downloads.location.prompt = False
 
 ## Remember the last used download directory.
 ## Type: Bool
