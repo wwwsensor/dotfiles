@@ -6,6 +6,7 @@ alias a=alias
 # Suffix
 for s in gitconfig gitignore txt conf yml toml log json ini zsh lua py md mod html
 do; a -s $s=$EDITOR; done
+a -s pdf="ds zathura"
 # Other
 a ddgr="ddgr --noua --rev --url-handler=xdg-open"
 a zshrc="$EDITOR $ZDOTDIR/.zshrc"
