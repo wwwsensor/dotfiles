@@ -38,6 +38,7 @@ tealdeer
 thorium-browser-bin
 tofi
 tokyonight-gtk-theme-git
+translate-shell
 ttf-hack-nerd
 typst
 ueberzugpp
