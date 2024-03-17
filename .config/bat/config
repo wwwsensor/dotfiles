@@ -1,8 +1,6 @@
-# All options: `bat --help`
+# See themes: `bat --list-themes`
+# See options: `bat --help`
 
 --italic-text=always
---tabs 1
+--tabs 2
 -p
-
-# All themes: `bat --list-themes`
---theme="Dracula"
