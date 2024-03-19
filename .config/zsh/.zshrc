@@ -37,14 +37,12 @@ a la="l -A" &&
 a ll="l -l" &&
 a lla="ll -A"
 # FS
-## Write
-a de="sudoedit"
+a de="doasedit"
+a e="$EDITOR"
+a i="swayimg"
 a mkd="mkdir"
 a rr="rm -rf"
 a d="doas "
-## Read
-a e="$EDITOR"
-a i="swayimg"
 a c="bat"
 unalias a
 N=/dev/null

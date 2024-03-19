@@ -6,6 +6,7 @@ bat
 cht.sh-git
 ddgr
 discord
+doasedit-alternative
 ffmpegthumbnailer
 git
 git-credential-oauth

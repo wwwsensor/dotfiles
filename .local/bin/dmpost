@@ -1,0 +1,22 @@
+#!/bin/sh
+
+N>/dev/null
+
+# Handle errors
+senderr(){ echo dmpost: "$@";exit 1; }
+
+# Handle dependencies
+which doas >$N || senderr doas not found
+which doasedit >$N || senderr doasedit not found
+
+# Sys config
+## zsh
+ZSHE=/etc/zsh/zshenv
+[ -f $ZSHE ] && {
+  STR="export ZDOTDIR=~/.config/zsh"
+  grep -q "$STR" $ZSHE ||
+  echo "$STR" | doas tee -a $ZSHE >$N
+}
+
+## Super user
+doas ln -s $(which doas) /usr/bin/sudo
