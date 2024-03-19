@@ -1,13 +1,22 @@
 #!/bin/sh
+# WWW          : https://github.com/wwwsensor/dotfiles
+# Author       : @sensor @ss
+# Dependencies : paru
+#
+# Post Dotfiles Manager script
 
-N>/dev/null
+# Notable variables
+N=/dev/null
 
 # Handle errors
 senderr(){ echo dmpost: "$@";exit 1; }
 
 # Handle dependencies
-which doas >$N || senderr doas not found
-which doasedit >$N || senderr doasedit not found
+which paru >$N || senderr doas not found
+
+# SW
+paru -S doasedit-alternative opendoas
+paru -Rn base-devel sudo
 
 # Sys config
 ## zsh
