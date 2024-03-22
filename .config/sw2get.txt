@@ -10,7 +10,6 @@ doasedit-alternative
 ffmpegthumbnailer
 git
 git-credential-oauth
-gnome-tweaks
 grim
 htop
 imagemagick
@@ -20,6 +19,7 @@ lsd
 man
 neovim
 noto-fonts-emoji
+nwg-look
 pamixer
 paru-bin
 pfetch-git
