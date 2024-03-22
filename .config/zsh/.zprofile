@@ -1,14 +1,28 @@
-mkdir -p ~/.cache; clear; which $WM >/dev/null && [ "/dev/tty1" = "$(tty)" ] && {
+# Notable variables
+N>/dev/null
 
-  # $WM found
-  pipewire &
-  pipewire-pulse &
-  dbus-run-session $WM
+# Always
+mkdir -p ~/.cache
+clear
 
-} >~/.cache/zprofile.log 2>&1 || {
+# If tty is /dev/tty1
+[ "/dev/tty1" = "$(tty)" ] && {
 
-  # $WM not found
-  echo .zprofile: $WM not found
-  false
+if [ which $WM >$N 2>&1 ]; then
+  {
+
+    # If $WM found
+    pipewire &
+    pipewire-pulse &
+    dbus-run-session $WM
+
+  } >~/.cache/zprofile.log 2>&1
+else
+
+    # If $WM not found
+    echo .zprofile: $WM not found
+    false
+
+fi
 
 }
