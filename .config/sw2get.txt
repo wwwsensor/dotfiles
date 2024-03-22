@@ -12,10 +12,8 @@ git
 git-credential-oauth
 gnome-tweaks
 grim
-gtk-engine-murrine
 htop
 imagemagick
-kalker-bin
 lazygit
 libva-mesa-driver
 lsd

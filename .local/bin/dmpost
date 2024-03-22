@@ -12,22 +12,23 @@ N=/dev/null
 senderr(){ echo dmpost: "$@";exit 1; }
 
 # Handle dependencies
-which paru >$N || senderr doas not found
+which paru >$N 2>&1 || senderr paru not found
 
 # SW
+sudo ln -sf $(which doas) /usr/bin/sudo
 {
 paru -S --needed --noconfirm doasedit-alternative opendoas
 paru -Rn --noconfirm base-devel sudo
+paru -S --needed --noconfirm cli11 automake autoconf gcc fakeroot make meson which guile ninja texinfo patch pkgconf m4
 } >$N 2>&1
 
 # Sys config
 ## zsh
-ZSHE=/etc/zsh/zshenv
-[ -f $ZSHE ] && {
+which zsh >$N 2>&1 && {
+  ZDIR=/etc/zsh
   STR="export ZDOTDIR=~/.config/zsh"
-  grep -q "$STR" $ZSHE ||
-  echo "$STR" | doas tee -a $ZSHE >$N
+  mkdir -p $ZDIR
+  touch $ZDIR/zshenv
+  grep -q "$STR" $ZDIR/zshenv ||
+  echo "$STR" | doas tee -a $ZDIR/zshenv >$N
 }
-
-## sudo
-doas ln -sf $(which doas) /usr/bin/sudo
