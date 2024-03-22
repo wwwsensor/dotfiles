@@ -44,6 +44,7 @@ vencord-installer-cli-bin
 waylock
 wl-clipboard
 xdg-desktop-portal-gtk
+xdg-utils
 yazi
 zathura-pdf-poppler
 zsh
