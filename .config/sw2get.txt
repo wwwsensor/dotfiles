@@ -28,7 +28,6 @@ pipewire-media-session
 pipewire-pulse
 playerctl
 prismlauncher-qt5-bin
-python-adblock
 rbw
 slurp
 swaybg
