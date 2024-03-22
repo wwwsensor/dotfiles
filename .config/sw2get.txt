@@ -18,7 +18,6 @@ lazygit
 libva-mesa-driver
 lsd
 man
-mimi
 neovim
 noto-fonts-emoji
 pamixer
