@@ -1,0 +1,52 @@
+#!/bin/sh
+# WWW          : https://github.com/wwwsensor/dotfiles
+# Author       : @sensor @ss
+# Dependencies : coreutils | busybox, pacman, paru
+#
+# Auto setup Spotify for Arch based distros.
+
+# Notable variables
+N=/dev/null
+
+# Handle errors
+senderr(){ echo sposet: "$@";exit 1; }
+
+# Handle dependencies
+which paru >$N 2>&1 || senderr paru not found
+
+# Get SW
+paru -Rn spotify spicetify-cli spicetify-marketplace-bin --noconfirm >$N 2>&1
+paru -Sy spotify spicetify-cli spicetify-marketplace-bin --noconfirm >$N 2>&1
+
+# Config Spicetify
+mkdir ~/.config/spotify -p &&
+touch ~/.config/spotify/prefs &&
+spicetify config custom_apps marketplace >$N 2>&1
+
+# Gain write permission on Spotify files
+sudo chmod a+wr /opt/spotify >$N 2>&1 &&
+sudo chmod a+wr /opt/spotify/Apps -R >$N 2>&1 &&
+
+# Final message
+## Succesful
+{
+cat - >&2 <<EOF
+
+Enable Spicetify:
+
+  $ spicetify apply
+
+EOF
+exit 0
+}
+
+## Unsuccesful
+cat - >&2 <<EOF
+
+Could not gain write permission on:
+
+  /opt/spotify
+  /opt/spotify/Apps
+
+EOF
+exit 1
