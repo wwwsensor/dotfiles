@@ -24,6 +24,7 @@ touch ~/.config/spotify/prefs &&
 spicetify config custom_apps marketplace >$N 2>&1
 
 # Gain write permission on Spotify files
+# https://spicetify.app/docs/advanced-usage/installation/#note-for-linux-users
 sudo chmod a+wr /opt/spotify >$N 2>&1 &&
 sudo chmod a+wr /opt/spotify/Apps -R >$N 2>&1 &&
 
