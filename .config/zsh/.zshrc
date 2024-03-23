@@ -86,8 +86,6 @@ PS1="%U%3~%u "; RPS1="%(?..%F{red}%?%f)"
 #   vicmd = normal
 #   viins = insert
 #   visual = visual
-#   menuselect
-#   main
 #   etc...
 #
 # See current binds of a mode:
@@ -95,11 +93,6 @@ PS1="%U%3~%u "; RPS1="%(?..%F{red}%?%f)"
 
 # Enable vi mode
 bindkey -v
-# Menuselect
-bindkey -M menuselect "h" vi-backward-char
-bindkey -M menuselect "j" vi-down-line-or-history
-bindkey -M menuselect "k" vi-up-line-or-history
-bindkey -M menuselect "l" vi-forward-char
 # Viins
 bindkey -v "^?" backward-delete-char # strange bug
 bindkey "^[[Z" pd && zle -N pd
