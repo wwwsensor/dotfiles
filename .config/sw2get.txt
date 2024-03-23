@@ -34,7 +34,6 @@ swayimg
 tealdeer
 thorium-browser-bin
 tofi
-tokyonight-gtk-theme-git
 translate-shell
 ttf-hack-nerd
 typst
@@ -55,6 +54,11 @@ zsh-syntax-highlighting
 cmake
 luarocks
 npm
+
+# Theming
+papirus-icon-theme
+tokyonight-gtk-theme-git
+xcursor-pro-cursor-theme
 ##############################
 
-# https://github.com/ljmill/tokyo-night-icons
+# https://bibata.live
