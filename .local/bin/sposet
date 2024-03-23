@@ -33,7 +33,7 @@ sudo chmod a+wr /opt/spotify/Apps -R >$N 2>&1 &&
 {
 cat - >&2 <<EOF
 
-Enable Spicetify:
+ Enable Spicetify:
 
   $ spicetify apply
 
@@ -44,7 +44,7 @@ exit 0
 ## Unsuccesful
 cat - >&2 <<EOF
 
-Could not gain write permission on:
+ Could not gain write permission on:
 
   /opt/spotify
   /opt/spotify/Apps
