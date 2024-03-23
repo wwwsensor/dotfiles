@@ -3,7 +3,7 @@
 # Author       : @sensor @ss
 # Dependencies : paru
 #
-# Post Dotfiles Manager script
+# Post Dotfiles Manager script.
 
 # Notable variables
 N=/dev/null
@@ -14,15 +14,15 @@ senderr(){ echo dmpost: "$@";exit 1; }
 # Handle dependencies
 which paru >$N 2>&1 || senderr paru not found
 
-# Choose elevation method
-S=sudo && which doas >$N 2>&1 && S=doas
-
 # SW
-$S ln -sf $(which doas >$N 2>&1) /usr/bin/sudo
 paru -Sy --needed --noconfirm doasedit-alternative opendoas >$N 2>&1
 
-# ZDOTDIR
+# Config
+## Sudo
+sudo ln -sf $(which doas >$N 2>&1) /usr/bin/sudo
+
+## ZDOTDIR
 DIR=/etc/zsh
-$S mkdir -p $DIR && $S touch $DIR/zshenv
+sudo mkdir -p $DIR && sudo touch $DIR/zshenv
 grep ZDOTDIR $DIR/zshenv ||
-echo "export ZDOTDIR=~/.config/zsh" | $S tee -ap $DIR/zshenv
+echo "export ZDOTDIR=~/.config/zsh" | sudo tee -ap $DIR/zshenv

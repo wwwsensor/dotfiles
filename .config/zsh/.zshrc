@@ -72,7 +72,7 @@ ds(){ $@ & disown; }
 HISTFILE=$HOME/.cache/zshist && SAVEHIST=1000 && HISTSIZE=$SAVEHIST
 setopt inc_append_history hist_ignore_all_dups hist_reduce_blanks autocd globdots
 zstyle ":completion:*" ignored-patterns "init"
-zstyle ":completion:*" menu yes select 
+zstyle ":completion:*" menu select
 autoload -Uz colors compinit && { compinit -u -d ~/.cache/.zcompdump; colors; } # sh
 zmodload zsh/complist # c
 ##############################
