@@ -74,13 +74,13 @@ num-results = 0
 width = 1200
 height = 64
 
-background-color = #1a1b26
+background-color = #1a1b26e6
 
 outline-width = 0
 outline-color = #080800
 
 border-width = 2
-border-color = #7dcfff
+border-color = #7dcfffe6
 
 corner-radius = 0
 
