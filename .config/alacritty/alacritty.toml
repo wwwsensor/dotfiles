@@ -13,12 +13,7 @@
 [font]
   normal.family = "HackNerdFont"
 
-# Make Alacritty send the expected
-# key-code of Shift/Ctrl+Enter for Vi
-[[keyboard.bindings]]
-  chars = "\u001B[13;2u"
-  key = "Return"
-  mods = "Shift"
+# Make Alacritty send the expected key-code
 [[keyboard.bindings]]
   chars = "\u001B[13;5u"
   key = "Return"

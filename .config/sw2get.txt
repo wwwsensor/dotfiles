@@ -36,6 +36,7 @@ thorium-browser-bin
 tofi
 translate-shell
 ttf-hack-nerd
+ttf-roboto
 typst
 ueberzugpp
 unarchiver
