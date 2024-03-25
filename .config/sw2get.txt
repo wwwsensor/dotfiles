@@ -14,6 +14,7 @@ grim
 htop
 imagemagick
 lazygit
+libertinus-font
 libva-mesa-driver
 lsd
 man
