@@ -91,9 +91,9 @@ bindkey -M vicmd "j" down-line
 bindkey -M vicmd "k" up-line
 bindkey -M vicmd "L" end-of-line
 bindkey -M vicmd "H" beginning-of-line
+bindkey -M vicmd "^@" pd && zle -N pd
 bindkey -M vicmd "^K" history-substring-search-up
 bindkey -M vicmd "^J" history-substring-search-down
-bindkey -M vicmd "^[[Z" pd && zle -N pd
 ##############################
 
 ## VI MODE ###################
