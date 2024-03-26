@@ -1,25 +1,4 @@
-# Shell
-#[shell]
-#  program = "powershell"
-#  args = ["-nologo"]
-
-# Window
-[window]
-  opacity = 0.90
-  padding.x = 20
-  padding.y = 20
-
-# Font
-[font]
-  normal.family = "HackNerdFont"
-
-# Make Alacritty send the expected key-code
-[[keyboard.bindings]]
-  chars = "\u001B[13;5u"
-  key = "Return"
-  mods = "Control"
-
-# TokyoNight : https://github.com/folke/tokyonight.nvim
+## TokyoNight theme ##########
 [colors.primary]
   background = '#1a1b26'
   foreground = '#c0caf5'
@@ -50,3 +29,23 @@
 [[colors.indexed_colors]]
   color = '#db4b4b'
   index = 17
+##############################
+
+#[shell]
+#  program = "powershell"
+#  args = ["-nologo"]
+
+[window]
+  opacity = 0.90
+  padding.x = 20
+  padding.y = 20
+
+[font]
+  normal.family = "HackNerdFont"
+
+[[keyboard.bindings]]
+  # stdin
+  key = "Return"
+  mods = "Control"
+  # stdout
+  chars = "\u001B[13;5u"

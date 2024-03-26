@@ -1,11 +1,11 @@
 # WWW    : https://github.com/wwwsensor/dotfiles
 # Author : @sensor @ss
 
-## ALIASES & OTHER ############
+## ALIASES ###################
 alias a=alias
 # Suffix
-for s in gitconfig gitignore txt conf yml toml log json ini zsh lua py md mod html typ css
-do; a -s $s=$EDITOR; done
+for S in gitconfig gitignore txt conf yml toml log json ini zsh lua py md mod html typ css
+do; a -s $S=$EDITOR; done
 a -s pdf="ds zathura"
 # Other
 a ddgr="ddgr --noua --rev --url-handler=xdg-open"
@@ -45,30 +45,17 @@ a rr="rm -rf"
 a d="doas "
 a c="bat"
 unalias a
-N=/dev/null
 ##############################
 
 ## FUNCTIONS #################
-zstats(){ fc -l 1 | awk '{ CMD[$2]++; count++; } END { for (a in CMD) print CMD[a] " " CMD[a]*100/count "% " a }' | grep -v "./" | sort -nr | head -n 20 | column -c3 -s " " -t | nl; }
+ztop(){ fc -l 1 | awk '{ CMD[$2]++; count++; } END { for (a in CMD) print CMD[a] " " CMD[a]*100/count "% " a }' | grep -v "./" | sort -nr | head -n 20 | column -c3 -s " " -t | nl; }
 mkcd(){ mkdir -p $@ && cd ${@:$#}; }
-take(){
-	if [[ $1 =~ ^(https?|ftp).*\.(tar\.(gz|bz2|xz)|tgz)$ ]]; then
-	  data="$(mktemp)" 
-	  curl -L "$1" > "$data"; tar xf "$data"
-	  dir="$(tar tf "$data" | head -n 1)" 
-	  rm "$data"; cd "$dir"
-	elif [[ $1 =~ ^([A-Za-z0-9]\+@|https?|git|ssh|ftps?|rsync).*\.git/?$ ]]; then
-		git clone "$1" &&	cd "$(basename ${1%%.git})"
-	else
-		mkcd "$@"
-	fi
-}
 pd(){ cd ..;zle reset-prompt; }
 ds(){ $@ & disown; }
 ##############################
 
 ## ZSH #######################
-# $ man zshall for info
+# Info: $ man zshall
 HISTFILE=$HOME/.cache/zshist && SAVEHIST=1000 && HISTSIZE=$SAVEHIST
 setopt inc_append_history hist_ignore_all_dups hist_reduce_blanks autocd globdots
 zstyle ":completion:*" ignored-patterns "init"
@@ -94,20 +81,19 @@ PS1="%U%3~%u "; RPS1="%(?..%F{red}%?%f)"
 # Enable vi mode
 bindkey -v
 # Viins
-bindkey -v "^?" backward-delete-char # strange bug
-bindkey "^[[Z" pd && zle -N pd
-bindkey "^K"   history-substring-search-up
-bindkey "^J"   history-substring-search-down
-for pattern in jk jK Jk JK
-do; bindkey "$pattern" vi-cmd-mode; done
+bindkey "^@" pd && zle -N pd
+bindkey "^K" history-substring-search-up
+bindkey "^J" history-substring-search-down
+for PATTERN in jk jK Jk JK
+do; bindkey "$PATTERN" vi-cmd-mode; done
 # Vicmd
 bindkey -M vicmd "j" down-line
 bindkey -M vicmd "k" up-line
 bindkey -M vicmd "L" end-of-line
 bindkey -M vicmd "H" beginning-of-line
+bindkey -M vicmd "^K" history-substring-search-up
+bindkey -M vicmd "^J" history-substring-search-down
 bindkey -M vicmd "^[[Z" pd && zle -N pd
-bindkey -M vicmd "^K"   history-substring-search-up
-bindkey -M vicmd "^J"   history-substring-search-down
 ##############################
 
 ## VI MODE ###################
@@ -122,8 +108,9 @@ precmd(){ echo -ne "\e[5 q"; }
 ##############################
 
 ## PLUGINS ###################
-for p in zsh-history-substring-search zsh-syntax-highlighting
-do; . /usr/share/zsh/plugins/$p/$p.zsh 2>/dev/null; done
+for P in zsh-history-substring-search zsh-syntax-highlighting
+do; . /usr/share/zsh/plugins/$P/$P.zsh 2>/dev/null; done
 ##############################
 
+N=/dev/null
 cal -m
