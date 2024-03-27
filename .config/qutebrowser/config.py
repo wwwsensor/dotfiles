@@ -619,7 +619,7 @@ c.completion.height = '20%'
 ## Changing this setting will cause the completion history to be
 ## regenerated on the next start, which will take a short while.
 ## Type: List of UrlPattern
-# c.completion.web_history.exclude = []
+c.completion.web_history.exclude = ['file:///home/ss/.config/qutebrowser/blank.html']
 
 ## Number of URLs to show in the web history. 0: no history / -1:
 ## unlimited
