@@ -1,4 +1,4 @@
-font = "~/.local/share/fonts/Inter.ttc"
+font = "/home/ss/.local/share/fonts/Inter.ttc:style=Display"
 font-size = 13
 hint-font = true
 

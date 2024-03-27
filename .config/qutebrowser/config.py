@@ -1245,7 +1245,7 @@ c.editor.command = ['alacritty', '-e', 'nvim', '{file}']
 ## font setting, it's replaced with the fonts listed here. If set to an
 ## empty value, a system-specific monospace default is used.
 ## Type: List of Font, or Font
-# c.fonts.default_family = []
+c.fonts.default_family = ['Inter Display Medium']
 
 ## Default font size to use. Whenever "default_size" is used in a font
 ## setting, it's replaced with the size listed here. Valid values are
@@ -1727,7 +1727,7 @@ c.input.media_keys = False
 ## Enable smooth scrolling for web pages. Note smooth scrolling does not
 ## work with the `:scroll-px` command.
 ## Type: Bool
-# c.scrolling.smooth = False
+c.scrolling.smooth = True
 
 ## When to find text on a page case-insensitively.
 ## Type: IgnoreCase
