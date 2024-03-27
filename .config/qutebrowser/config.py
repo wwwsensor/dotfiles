@@ -1,13 +1,16 @@
 # WWW          : https://github.com/wwwsensor/dotfiles
 # Author       : @sensor @ss
 
+## ESSENTIAL #################
 # Prevent GUI from writing this file
 config.load_autoconfig(False)
+##############################
 
-## Aliases for commands. The keys of the given dictionary are the
-## aliases, while the values are the commands they map to.
-## Type: Dict
-# c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save', 'wqa': 'quit --save'}
+## BINDINGS ##################
+# Untouched defaults are at EOF
+config.bind('K', 'tab-next')
+config.bind('J', 'tab-prev')
+##############################
 
 ## Time interval (in milliseconds) between auto-saves of
 ## config/cookies/etc.
@@ -45,7 +48,7 @@ config.load_autoconfig(False)
 ##   - minor: Show changelog for major and minor upgrades (e.g. v2.0.0 -> v2.1.0).
 ##   - patch: Show changelog for major, minor and patch upgrades (e.g. v2.0.0 -> v2.0.1).
 ##   - never: Never show changelog after upgrades.
-# c.changelog_after_upgrade = 'minor'
+c.changelog_after_upgrade = 'major'
 
 ## Background color of the completion widget category headers.
 ## Type: QssColor
@@ -529,7 +532,7 @@ config.load_autoconfig(False)
 ##   - auto: Use the system-wide color scheme setting.
 ##   - light: Force a light theme.
 ##   - dark: Force a dark theme.
-# c.colors.webpage.preferred_color_scheme = 'auto'
+c.colors.webpage.preferred_color_scheme = 'dark'
 
 ## Number of commands to save in the command history. 0: no history / -1:
 ## unlimited
@@ -673,7 +676,7 @@ config.load_autoconfig(False)
 ##   - adblock: Use Brave's ABP-style adblocker
 ##   - hosts: Use hosts blocking
 ##   - both: Use both hosts blocking and Brave's ABP-style adblocker
-# c.content.blocking.method = 'auto'
+c.content.blocking.method = 'both'
 
 ## A list of patterns that should always be loaded, despite being blocked
 ## by the ad-/host-blocker. Local domains are always exempt from
@@ -970,7 +973,7 @@ config.load_autoconfig(False)
 ##   - true
 ##   - false
 ##   - ask
-# c.content.notifications.enabled = 'ask'
+c.content.notifications.enabled = 'false'
 
 ## What notification presenter to use for web notifications. Note that
 ## not all implementations support all features of notifications: - The
@@ -1175,7 +1178,7 @@ config.load_autoconfig(False)
 ## `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
 ## Same as `{column}`, but starting from index 0.
 ## Type: ShellCommand
-# c.editor.command = ['gvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
+c.editor.command = ['alacritty', '-e', 'nvim', '{file}']
 
 ## Encoding to use for the editor.
 ## Type: Encoding
@@ -1191,7 +1194,7 @@ config.load_autoconfig(False)
 ## Filename of the file to be written to. If not contained in any
 ## argument, the   standard output of the command is read instead.
 ## Type: ShellCommand
-# c.fileselect.folder.command = ['xterm', '-e', 'ranger', '--choosedir={}']
+# c.fileselect.folder.command = ['alacritty', '-e', 'yazi', '--choosedir={}']
 
 ## Handler for selecting file(s) in forms. If `external`, then the
 ## commands specified by `fileselect.single_file.command`,
@@ -1211,7 +1214,7 @@ config.load_autoconfig(False)
 ## contained in any argument, the   standard output of the command is
 ## read instead.
 ## Type: ShellCommand
-# c.fileselect.multiple_files.command = ['xterm', '-e', 'ranger', '--choosefiles={}']
+# c.fileselect.multiple_files.command = ['alacritty', '-e', 'yazi', '--choosefiles={}']
 
 ## Command (and arguments) to use for selecting a single file in forms.
 ## The command should write the selected file path to the specified file
@@ -1219,7 +1222,7 @@ config.load_autoconfig(False)
 ## the file to be written to. If not contained in any argument, the
 ## standard output of the command is read instead.
 ## Type: ShellCommand
-# c.fileselect.single_file.command = ['xterm', '-e', 'ranger', '--choosefile={}']
+# c.fileselect.single_file.command = ['alacritty', '-e', 'yazi', '--choosefile={}']
 
 ## Font used in the completion categories.
 ## Type: Font
@@ -1475,7 +1478,7 @@ config.load_autoconfig(False)
 ## Whether the underlying Chromium should handle media keys. On Linux,
 ## disabling this also disables Chromium's MPRIS integration.
 ## Type: Bool
-# c.input.media_keys = True
+c.input.media_keys = False
 
 ## Mode to change to when focusing on a tab/URL changes.
 ## Type: String
@@ -2071,7 +2074,7 @@ config.load_autoconfig(False)
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
 ## Type: FuzzyUrl
-# c.url.default_page = 'https://start.duckduckgo.com/'
+c.url.default_page = 'file:///home/ss/.config/qutebrowser/blank.html'
 
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.
@@ -2112,7 +2115,7 @@ config.load_autoconfig(False)
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
-# c.url.start_pages = ['https://start.duckduckgo.com']
+c.url.start_pages = ['file:///home/ss/.config/qutebrowser/blank.html']
 
 ## URL parameters to strip with `:yank url`.
 ## Type: List of String
