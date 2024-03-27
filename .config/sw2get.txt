@@ -28,12 +28,13 @@ pipewire-media-session
 pipewire-pulse
 playerctl
 prismlauncher-qt5-bin
+python-adblock
+qutebrowser
 rbw
 slurp
 swaybg
 swayimg
 tealdeer
-thorium-browser-bin
 tofi
 translate-shell
 ttf-hack-nerd
