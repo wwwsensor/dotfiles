@@ -8,23 +8,30 @@ config.load_autoconfig(False)
 
 ## BINDINGS ##################
 # Untouched defaults are at EOF
+# Normal
+config.bind('<Ctrl-E>', 'config-edit')
 config.bind('K', 'tab-next')
 config.bind('J', 'tab-prev')
+# Cmd
+config.bind('<Ctrl-C>', 'mode-leave', mode='command')
+config.bind('<Ctrl-Shift-C>', 'completion-item-yank', mode='command')
+config.bind('<Ctrl-H>', 'mode-leave', mode='command')
+config.bind('<Ctrl-J>', 'completion-item-focus --history next', mode='command')
+config.bind('<Ctrl-K>', 'completion-item-focus --history prev', mode='command')
+config.bind('<Ctrl-L>', 'command-accept', mode='command')
+# Passthrough
+config.bind('<Shift-Space>', 'mode-leave', mode='passthrough')
+# Prompt
+config.bind('H', 'prompt-accept --save no', mode='yesno')
+config.bind('L', 'prompt-accept --save yes', mode='yesno')
+config.bind('h', 'prompt-accept no', mode='yesno')
+config.bind('l', 'prompt-accept yes', mode='yesno')
 ##############################
 
 ## Time interval (in milliseconds) between auto-saves of
 ## config/cookies/etc.
 ## Type: Int
 # c.auto_save.interval = 15000
-
-## Always restore open sites when qutebrowser is reopened. Without this
-## option set, `:wq` (`:quit --save`) needs to be used to save open tabs
-## (and restore them), while quitting qutebrowser in any other way will
-## not save/restore the session. By default, this will save to the
-## session which was last loaded. This behavior can be customized via the
-## `session.default_name` setting.
-## Type: Bool
-# c.auto_save.session = False
 
 ## Map keys to other keys, so that they are equivalent in all modes. When
 ## the key used as dictionary-key is pressed, the binding for the key
@@ -190,7 +197,7 @@ c.changelog_after_upgrade = 'major'
 ## Background color for hints. Note that you can use a `rgba(...)` value
 ## for transparency.
 ## Type: QssColor
-# c.colors.hints.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 247, 133, 0.8), stop:1 rgba(255, 197, 66, 0.8))'
+c.colors.hints.bg = 'yellow'
 
 ## Font color for hints.
 ## Type: QssColor
@@ -198,7 +205,7 @@ c.changelog_after_upgrade = 'major'
 
 ## Font color for the matched part of hints.
 ## Type: QtColor
-# c.colors.hints.match.fg = 'green'
+c.colors.hints.match.fg = 'yellow'
 
 ## Background color of the keyhint widget.
 ## Type: QssColor
@@ -250,7 +257,7 @@ c.changelog_after_upgrade = 'major'
 
 ## Background color for prompts.
 ## Type: QssColor
-# c.colors.prompts.bg = '#444444'
+c.colors.prompts.bg = 'black'
 
 ## Border used around UI elements in prompts.
 ## Type: String
@@ -338,7 +345,7 @@ c.changelog_after_upgrade = 'major'
 
 ## Foreground color of the URL in the statusbar on error.
 ## Type: QssColor
-# c.colors.statusbar.url.error.fg = 'orange'
+c.colors.statusbar.url.error.fg = 'red'
 
 ## Default foreground color of the URL in the statusbar.
 ## Type: QssColor
@@ -351,16 +358,16 @@ c.changelog_after_upgrade = 'major'
 ## Foreground color of the URL in the statusbar on successful load
 ## (http).
 ## Type: QssColor
-# c.colors.statusbar.url.success.http.fg = 'white'
+c.colors.statusbar.url.success.http.fg = 'yellow'
 
 ## Foreground color of the URL in the statusbar on successful load
 ## (https).
 ## Type: QssColor
-# c.colors.statusbar.url.success.https.fg = 'lime'
+c.colors.statusbar.url.success.https.fg = 'white'
 
 ## Foreground color of the URL in the statusbar when there's a warning.
 ## Type: QssColor
-# c.colors.statusbar.url.warn.fg = 'yellow'
+c.colors.statusbar.url.warn.fg = 'orange'
 
 ## Background color of the tab bar.
 ## Type: QssColor
@@ -552,7 +559,7 @@ c.colors.webpage.preferred_color_scheme = 'dark'
 
 ## Height (in pixels or as percentage of the window) of the completion.
 ## Type: PercOrInt
-# c.completion.height = '50%'
+c.completion.height = '20%'
 
 ## Minimum amount of characters needed to update completions.
 ## Type: Int
@@ -626,7 +633,7 @@ c.colors.webpage.preferred_color_scheme = 'dark'
 ##   - multiple-tabs: Show a confirmation if multiple tabs are opened.
 ##   - downloads: Show a confirmation if downloads are running
 ##   - never: Never show a confirmation.
-# c.confirm_quit = ['never']
+c.confirm_quit = ['downloads']
 
 ## Automatically start playing `<video>` elements.
 ## Type: Bool
@@ -1127,12 +1134,12 @@ c.content.notifications.enabled = False
 ## Directory to save downloads to. If unset, a sensible OS-specific
 ## default is used.
 ## Type: Directory
-# c.downloads.location.directory = None
+c.downloads.location.directory = '~/dow'
 
 ## Prompt the user for the download location. If set to false,
 ## `downloads.location.directory` will be used.
 ## Type: Bool
-# c.downloads.location.prompt = True
+c.downloads.location.prompt = False
 
 ## Remember the last used download directory.
 ## Type: Bool
@@ -1194,7 +1201,7 @@ c.editor.command = ['alacritty', '-e', 'nvim', '{file}']
 ## Filename of the file to be written to. If not contained in any
 ## argument, the   standard output of the command is read instead.
 ## Type: ShellCommand
-# c.fileselect.folder.command = ['alacritty', '-e', 'yazi', '--choosedir={}']
+c.fileselect.folder.command = ['alacritty', '-e', 'yazi', '--choosedir={}']
 
 ## Handler for selecting file(s) in forms. If `external`, then the
 ## commands specified by `fileselect.single_file.command`,
@@ -1214,7 +1221,7 @@ c.editor.command = ['alacritty', '-e', 'nvim', '{file}']
 ## contained in any argument, the   standard output of the command is
 ## read instead.
 ## Type: ShellCommand
-# c.fileselect.multiple_files.command = ['alacritty', '-e', 'yazi', '--choosefiles={}']
+c.fileselect.multiple_files.command = ['alacritty', '-e', 'yazi', '--choosefiles={}']
 
 ## Command (and arguments) to use for selecting a single file in forms.
 ## The command should write the selected file path to the specified file
@@ -1222,11 +1229,11 @@ c.editor.command = ['alacritty', '-e', 'nvim', '{file}']
 ## the file to be written to. If not contained in any argument, the
 ## standard output of the command is read instead.
 ## Type: ShellCommand
-# c.fileselect.single_file.command = ['alacritty', '-e', 'yazi', '--choosefile={}']
+c.fileselect.single_file.command = ['alacritty', '-e', 'yazi', '--choosefile={}']
 
 ## Font used in the completion categories.
 ## Type: Font
-# c.fonts.completion.category = 'bold default_size default_family'
+c.fonts.completion.category = 'default_size default_family'
 
 ## Font used in the completion widget.
 ## Type: Font
@@ -1235,7 +1242,7 @@ c.editor.command = ['alacritty', '-e', 'nvim', '{file}']
 ## Font used for the context menu. If set to null, the Qt default is
 ## used.
 ## Type: Font
-# c.fonts.contextmenu = None
+c.fonts.contextmenu = 'default_size default_family'
 
 ## Font used for the debugging console.
 ## Type: Font
@@ -1260,7 +1267,7 @@ c.fonts.default_family = ['Inter Display Medium']
 
 ## Font used for the hints.
 ## Type: Font
-# c.fonts.hints = 'bold default_size default_family'
+c.fonts.hints = 'default_size default_family'
 
 ## Font used in the keyhint widget.
 ## Type: Font
@@ -1355,7 +1362,7 @@ c.fonts.default_family = ['Inter Display Medium']
 
 ## CSS border value for hints.
 ## Type: String
-# c.hints.border = '1px solid #E3BE23'
+c.hints.border = '1px solid yellow'
 
 ## Characters used for hint strings.
 ## Type: UniqueCharString
@@ -1406,7 +1413,7 @@ c.fonts.default_family = ['Inter Display Medium']
 
 ## Rounding radius (in pixels) for the edges of hints.
 ## Type: Int
-# c.hints.radius = 3
+c.hints.radius = 6
 
 ## Scatter hint key chains (like Vimium) or not (like dwb). Ignored for
 ## number hints.
@@ -1582,7 +1589,7 @@ c.input.media_keys = False
 
 ## Show a filebrowser in download prompts.
 ## Type: Bool
-# c.prompt.filebrowser = True
+c.prompt.filebrowser = False
 
 ## Rounding radius (in pixels) for the edges of prompts.
 ## Type: Int
@@ -1843,7 +1850,7 @@ c.scrolling.smooth = True
 ##   - progress: Progress bar for the current page loading.
 ##   - text:foo: Display the static text after the colon, `foo` in the example.
 ##   - clock: Display current time. The format can be changed by adding a format string via `clock:...`. For supported format strings, see https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes[the Python datetime documentation].
-# c.statusbar.widgets = ['keypress', 'search_match', 'url', 'scroll', 'history', 'tabs', 'progress']
+c.statusbar.widgets = ['keypress', 'search_match', 'url', 'scroll', 'history', 'progress']
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool
@@ -1869,7 +1876,7 @@ c.scrolling.smooth = True
 ## Scaling factor for favicons in the tab bar. The tab size is unchanged,
 ## so big favicons also require extra `tabs.padding`.
 ## Type: Float
-# c.tabs.favicons.scale = 1.0
+c.tabs.favicons.scale = 0.9
 
 ## When to show favicons in the tab bar. When switching this from never
 ## to always/pinned, note that favicons might not be loaded yet, thus
@@ -1903,7 +1910,7 @@ c.scrolling.smooth = True
 ##   - startpage: Load the start page.
 ##   - default-page: Load the default page.
 ##   - close: Close the window.
-# c.tabs.last_close = 'ignore'
+c.tabs.last_close = 'startpage'
 
 ## Maximum width (in pixels) of tabs (-1 for no maximum). This setting
 ## only applies when tabs are horizontal. This setting does not apply to
@@ -1994,7 +2001,7 @@ c.scrolling.smooth = True
 ##   - never: Always hide the tab bar.
 ##   - multiple: Hide the tab bar if only one tab is open.
 ##   - switching: Show the tab bar when switching tabs.
-# c.tabs.show = 'always'
+c.tabs.show = 'multiple'
 
 ## Duration (in milliseconds) to show the tab bar before hiding it when
 ## tabs.show is set to 'switching'.
@@ -2036,7 +2043,7 @@ c.scrolling.smooth = True
 ## web page. * `{protocol}`: Protocol (http/https/...) of the current web
 ## page. * `{audio}`: Indicator for audio/mute status.
 ## Type: FormatString
-# c.tabs.title.format = '{audio}{index}: {current_title}'
+c.tabs.title.format = '[{index}] {audio}{current_title}'
 
 ## Format to use for the tab title for pinned tabs. The same placeholders
 ## like for `tabs.title.format` are defined.

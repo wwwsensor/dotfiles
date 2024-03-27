@@ -4,7 +4,7 @@
 ## ALIASES ###################
 alias a=alias
 # Suffix
-for S in gitconfig gitignore txt conf yml toml log json ini zsh lua py md mod html typ css
+for S in gitconfig gitignore txt conf yml toml log json ini zsh lua py md mod html typ css js
 do; a -s $S=$EDITOR; done
 a -s pdf="ds zathura"
 # Other
