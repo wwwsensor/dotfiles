@@ -114,4 +114,3 @@ do; . /usr/share/zsh/plugins/$P/$P.zsh 2>/dev/null; done
 ##############################
 
 N=/dev/null
-cal -m
