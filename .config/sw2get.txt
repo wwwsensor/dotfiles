@@ -38,7 +38,7 @@ tealdeer
 tofi
 translate-shell
 ttf-hack-nerd
-ttf-roboto
+ttf-poppins
 typst
 ueberzugpp
 unarchiver
