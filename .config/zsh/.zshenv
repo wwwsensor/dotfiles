@@ -1,5 +1,5 @@
 export PATH="$HOME/.local/bin:$PATH"
-export BROWSER="thorium-browser"
+export BROWSER="qutebrowser"
 export TERMINAL="alacritty"
 export EDITOR="nvim"
 export WM="Hyprland"

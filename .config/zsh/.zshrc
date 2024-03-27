@@ -82,6 +82,7 @@ PS1="%U%3~%u "; RPS1="%(?..%F{red}%?%f)"
 bindkey -v
 # Viins
 bindkey "^@" pd && zle -N pd
+bindkey "^?" backward-delete-char
 bindkey "^K" history-substring-search-up
 bindkey "^J" history-substring-search-down
 for PATTERN in jk jK Jk JK
